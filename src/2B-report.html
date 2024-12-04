@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Sorts Comparison and Swap Count Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Simple Sorts Comparison and Swap Count Analysis Report</h1>
+
+<div class="section">
+    <h2>Introduction</h2>
+    <p>This report presents the analysis of comparison and swap counts for four simple sorting algorithms implemented in the Sorts.java program. The analysis was conducted using fixed test values (randomValues = false) to ensure consistent and reproducible results. The program sorted an array of 50 integers, and the performance metrics were carefully tracked throughout the sorting process.</p>
+</div>
+
+<div class="section">
+    <h2>Test Configuration</h2>
+    <p>The analysis was performed with the following parameters:</p>
+    <p>The test array consisted of 50 elements with the initial configuration showing a mix of values ranging from 0 to 98, including some duplicate values. The array was processed by each sorting algorithm, with the program tracking both the number of comparisons made and the number of swaps performed during each sort operation.</p>
+</div>
+
+<div class="section">
+    <h2>Results</h2>
+    <table>
+        <tr>
+            <th>Sorting Algorithm</th>
+            <th>Number of Comparisons</th>
+            <th>Number of Swaps</th>
+        </tr>
+        <tr>
+            <td>Selection Sort</td>
+            <td>1,225</td>
+            <td>46</td>
+        </tr>
+        <tr>
+            <td>Bubble Sort</td>
+            <td>1,225</td>
+            <td>576</td>
+        </tr>
+        <tr>
+            <td>Better Bubble Sort</td>
+            <td>1,170</td>
+            <td>576</td>
+        </tr>
+        <tr>
+            <td>Insertion Sort</td>
+            <td>622</td>
+            <td>576</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>Analysis and Observations</h2>
+    <p>The results reveal several interesting patterns in the performance characteristics of each sorting algorithm:</p>
+
+    <p>Selection Sort exhibited the highest number of comparisons (1,225) but remarkably the lowest number of swaps (46). This behavior is characteristic of selection sort's algorithm, which makes a full scan of the remaining elements to find the minimum value before performing a swap. While it consistently performs n(n-1)/2 comparisons, it minimizes actual data movement operations.</p>
+
+    <p>Bubble Sort showed the same number of comparisons as Selection Sort (1,225) but required significantly more swaps (576). This higher swap count demonstrates bubble sort's tendency to perform many exchanges as it repeatedly compares and swaps adjacent elements, making it less efficient in terms of data movement.</p>
+
+    <p>Better Bubble Sort achieved a slight improvement in the number of comparisons (1,170) while maintaining the same number of swaps as the regular bubble sort (576). This reduction in comparisons is due to its optimization of stopping early when no swaps are needed in a pass, though in this case, the improvement was modest given the initial array configuration.</p>
+
+    <p>Insertion Sort emerged as the most efficient in terms of comparisons, requiring only 622 comparisons while performing the same number of swaps (576) as both bubble sort variants. This efficiency in comparisons demonstrates insertion sort's ability to take advantage of the array's existing order, as it only compares elements until it finds the correct position for insertion.</p>
+</div>
+
+<div class="section">
+    <h2>Conclusion</h2>
+    <p>The analysis reveals that while all four algorithms successfully sorted the array, they exhibited distinctly different efficiency characteristics. Insertion Sort demonstrated the best overall performance with the lowest number of comparisons, while Selection Sort excelled in minimizing the number of swaps. The Better Bubble Sort showed only marginal improvement over the regular Bubble Sort for this particular data set.</p>
+
+    <p>These results confirm theoretical expectations about these sorting algorithms and provide concrete evidence of their relative efficiencies. The significant variation in comparison and swap counts underscores the importance of choosing the appropriate sorting algorithm based on specific requirements, such as whether minimizing comparisons or minimizing data movement is more critical for the application.</p>
+</div>
+
+</body>
+</html>
